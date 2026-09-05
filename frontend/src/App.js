@@ -16,31 +16,31 @@ function App() {
 
   useEffect(() => {
     // SALES
-    fetch("http://127.0.0.1:8000/sales")
+    fetch("https://retail-sales-and-inventory-copilot-boxg.onrender.com/sales")
       .then((response) => response.json())
       .then((data) => setSales(data))
       .catch((error) => console.error("Sales Error:", error));
 
     // INVENTORY
-    fetch("http://127.0.0.1:8000/inventory")
+    fetch("https://retail-sales-and-inventory-copilot-boxg.onrender.com/inventory")
       .then((response) => response.json())
       .then((data) => setInventory(data))
       .catch((error) => console.error("Inventory Error:", error));
 
     // ATTENTION
-    fetch("http://127.0.0.1:8000/attention")
+    fetch("https://retail-sales-and-inventory-copilot-boxg.onrender.com/attention")
       .then((response) => response.json())
       .then((data) => setAttention(data))
       .catch((error) => console.error("Attention Error:", error));
 
     // SALES TRENDS
-    fetch("http://127.0.0.1:8000/trends")
+    fetch("https://retail-sales-and-inventory-copilot-boxg.onrender.com/trends")
       .then((response) => response.json())
       .then((data) => setTrends(data))
       .catch((error) => console.error("Trend Error:", error));
 
     // STORE PERFORMANCE
-    fetch("http://127.0.0.1:8000/stores")
+    fetch("https://retail-sales-and-inventory-copilot-boxg.onrender.com/stores")
       .then((response) => response.json())
       .then((data) => {
         console.log("Store Performance:", data);
@@ -51,7 +51,7 @@ function App() {
       );
 
     // NON-MOVING STOCK
-    fetch("http://127.0.0.1:8000/non-moving")
+    fetch("https://retail-sales-and-inventory-copilot-boxg.onrender.com/non-moving")
       .then((response) => response.json())
       .then((data) => setNonMoving(data))
       .catch((error) =>
@@ -59,7 +59,7 @@ function App() {
       );
 
     // STOCK-OUT PREDICTION
-    fetch("http://127.0.0.1:8000/stockout")
+  fetch("https://retail-sales-and-inventory-copilot-boxg.onrender.com/stockout")
       .then((response) => response.json())
       .then((data) => setStockout(data))
       .catch((error) =>
@@ -67,7 +67,7 @@ function App() {
       );
 
     // PRODUCT SALES TRENDS
-    fetch("http://127.0.0.1:8000/product-trends")
+    fetch("https://retail-sales-and-inventory-copilot-boxg.onrender.com/product-trends")
       .then((response) => response.json())
       .then((data) => setProductTrends(data))
       .catch((error) =>
@@ -99,7 +99,7 @@ function App() {
 
   try {
     const response = await fetch(
-      "http://127.0.0.1:8000/ask",
+  "https://retail-sales-and-inventory-copilot-boxg.onrender.com/ask",
       {
         method: "POST",
         headers: {
