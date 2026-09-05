@@ -22,11 +22,13 @@ app = FastAPI(
 )
 
 
+# CORS Configuration
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:3000",
-        "http://127.0.0.1:3000"
+        "http://127.0.0.1:3000",
+        "https://retail-sales-and-inventory-copilot.vercel.app"
     ],
     allow_credentials=True,
     allow_methods=["*"],
@@ -40,7 +42,6 @@ class QuestionRequest(BaseModel):
 
 @app.get("/")
 def home():
-
     return {
         "message": "Retail Sales & Inventory Copilot API is running!"
     }
@@ -48,51 +49,42 @@ def home():
 
 @app.get("/sales")
 def sales_summary():
-
     return get_total_sales()
 
 
 @app.get("/inventory")
 def inventory_status():
-
     data = get_inventory_status()
-
     return data.to_dict(orient="records")
 
 
 @app.get("/attention")
 def attention():
-
     return get_attention()
 
 
 @app.get("/trends")
 def sales_trends():
-
     return get_sales_trends()
 
 
 @app.get("/stores")
 def store_performance():
-
     return get_store_performance()
 
 
 @app.get("/non-moving")
 def non_moving_stock():
-
     return get_non_moving_stock()
 
 
 @app.get("/stockout")
 def stockout_predictions():
-
     return get_stockout_predictions()
 
 
 @app.get("/product-trends")
 def product_sales_trends():
-
     return get_product_sales_trends()
 
 
@@ -100,7 +92,6 @@ def product_sales_trends():
 def ask_question(request: QuestionRequest):
 
     if not request.question.strip():
-
         return {
             "answer": "Please enter a question.",
             "data": {},
