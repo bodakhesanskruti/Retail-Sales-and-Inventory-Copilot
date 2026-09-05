@@ -1,0 +1,11 @@
+product_id,product_name,category,price
+P001,Milk 500ml,Dairy,30
+P002,Bread,Bakery,40
+P003,Rice 5kg,Grocery,350
+P004,Cooking Oil 1L,Grocery,150
+P005,Biscuits,Grocery,20
+P006,Cold Drink 500ml,Beverage,40
+P007,Tea 250g,Beverage,120
+P008,Shampoo 180ml,Personal Care,180
+P009,Toothpaste,Personal Care,95
+P010,Bluetooth Speaker,Electronics,1200
